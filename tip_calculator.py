@@ -3,7 +3,13 @@ def repeat(): # This functions enables the user to start over
     print('Welcome to the tip calculator!\n')
 
     # The variable 'bill' asks for the bill from the user
-    bill = float(input("What was the total bill? \n$"))
+    while True:
+        try:
+            bill = float(input("What was the total bill? \n$"))
+            break
+        except ValueError:
+            print('Please enter a numerical value. Try again.') 
+   
     tax = bill * 0.10 # calculates the taxes
     subtotal = bill + tax # subtotal before tip
 
